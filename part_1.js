@@ -6,4 +6,3 @@ if (isNaN(num) || num === null || num === "" ||
 } else {
     console.log(Number(num).toString(base))
 }
-// SERHII TARABANCHUK

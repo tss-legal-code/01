@@ -13,4 +13,3 @@ for (x in nums) {
         console.log("Ответ: " + (+nums[1] + +nums[2]) + ", " + (+nums[1] / +nums[2]) + ".")
     }
 }
-// SERHII TARABANCHUK
