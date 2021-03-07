@@ -10,12 +10,11 @@ function changeNumBase() {
     let base = prompt("Введите ВТОРОЕ число (новая система счисления)")
     if (isNaN(num) || num === null || num === "" ||
         isNaN(base) || base === null || base === "") {
-        alert("Некорректный ввод!");
+        console.log("Некорректный ввод!");
         return
     }
-    alert(Number(num).toString(base))
+    console.log(Number(num).toString(base))
 }
-
 
 changeNumBase()
 

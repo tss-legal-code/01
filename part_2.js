@@ -4,21 +4,46 @@
 // Вводим 872 и 8, получаем "Ответ: 880, 109."
 // Вводим 'abc', получаем "Некорректный ввод!"
 
-function calcSumQuotient() {
-    let num1 = prompt("Введите ПЕРВОЕ число")
-    if (isNaN(num1) || num1 === null || num1 === "") {
-        alert("Некорректный ввод!")
-        return
-    }
-    let num2 = prompt("Введите ВТОРОЕ число")
-    if (isNaN(num2) || num2 === null || num2 === "") {
-        alert("Некорректный ввод!")
-        return
-    }
-    alert(`Ответ:   ${+num1 + +num2},   ${+num1 / +num2}.`)
+// function calcSumQuotient() {
+//     let num1 = prompt("Введите ПЕРВОЕ число")
+//     if (isInputWrong(num1)) {
+//         return
+//     }
+//     let num2 = prompt("Введите ВТОРОЕ число")
+//     if (isInputWrong(num2)) {
+//         return
+//     }
+//     console.log(`Ответ: ${+num1 + +num2}, ${+num1 / +num2}.`)
+//
+// }
+// function isInputWrong(input) {
+//     if (isNaN(input) || input === null || input === "") {
+//         console.log("Некорректный ввод!")
+//         return true
+//     }
+// }
 
+let isInputOk = true
+
+let num1 = getInput("Введите ПЕРВОЕ число")
+let num2 = getInput("Введите ВТОРОЕ число")
+
+function getInput(request) {
+    if (isInputOk == true) {
+        let tmp = prompt(request)
+        if (isNaN(tmp) || tmp === null || tmp === "") {
+            console.log("Некорректный ввод!" + " " + tmp)
+            isInputOk = false
+            return tmp
+        } else {
+            return tmp
+
+        }
+    }
 }
 
-calcSumQuotient()
+if (isInputOk == true) {
+    console.log(`Ответ: ${+num1 + +num2}, ${+num1 / +num2}.`)
+}
 
 // SERHII TARABANCHUK
