@@ -4,46 +4,22 @@
 // Вводим 872 и 8, получаем "Ответ: 880, 109."
 // Вводим 'abc', получаем "Некорректный ввод!"
 
-// function calcSumQuotient() {
-//     let num1 = prompt("Введите ПЕРВОЕ число")
-//     if (isInputWrong(num1)) {
-//         return
-//     }
-//     let num2 = prompt("Введите ВТОРОЕ число")
-//     if (isInputWrong(num2)) {
-//         return
-//     }
-//     console.log(`Ответ: ${+num1 + +num2}, ${+num1 / +num2}.`)
-//
-// }
-// function isInputWrong(input) {
-//     if (isNaN(input) || input === null || input === "") {
-//         console.log("Некорректный ввод!")
-//         return true
-//     }
-// }
-
-let isInputOk = true
-
-let num1 = getInput("Введите ПЕРВОЕ число")
-let num2 = getInput("Введите ВТОРОЕ число")
-
-function getInput(request) {
-    if (isInputOk == true) {
-        let tmp = prompt(request)
-        if (isNaN(tmp) || tmp === null || tmp === "") {
-            console.log("Некорректный ввод!" + " " + tmp)
-            isInputOk = false
-            return tmp
-        } else {
-            return tmp
-
-        }
-    }
+let nums = {
+    1: "",
+    2: "",
 }
 
-if (isInputOk == true) {
-    console.log(`Ответ: ${+num1 + +num2}, ${+num1 / +num2}.`)
+for (x in nums) {
+    nums[x] = prompt(`Введите ${x}-ое значение`)
+    //проверяю "" и null (ESC), т.к. считаю некорректным их приведение к "0"
+    if (isNaN(nums[x]) || nums[x] === "" || nums[x] === null) {
+        console.log("Некорректный ввод!")
+        break
+    }
+    //если оба значения корректны, то сработает условие ниже
+    if (x == 2) {
+        console.log(`Ответ: ${+nums[1] + +nums[2]}, ${+nums[1] / +nums[2]}.`)
+    }
 }
 
 // SERHII TARABANCHUK

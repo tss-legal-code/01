@@ -5,17 +5,14 @@
 // Вводим 872 и 8, получаем 1550
 // Вводим 2 и 'abc', получаем "Некорректный ввод!"
 
-function changeNumBase() {
-    let num = prompt("Введите ПЕРВОЕ число (для конвертации)")
-    let base = prompt("Введите ВТОРОЕ число (новая система счисления)")
-    if (isNaN(num) || num === null || num === "" ||
-        isNaN(base) || base === null || base === "") {
-        console.log("Некорректный ввод!");
-        return
-    }
+let num = prompt("Введите ПЕРВОЕ число (для конвертации)")
+let base = prompt("Введите ВТОРОЕ число (новая система счисления)")
+//обрабатываю такие значения как текст (в.т.ч. "") и null (нажатие ESC)
+if (isNaN(num) || num === null || num === "" ||
+    isNaN(base) || base === null || base === "") {
+    console.log("Некорректный ввод!");
+} else {
     console.log(Number(num).toString(base))
 }
-
-changeNumBase()
 
 // SERHII TARABANCHUK
