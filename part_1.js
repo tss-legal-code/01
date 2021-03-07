@@ -7,10 +7,10 @@
 
 let num = prompt("Введите ПЕРВОЕ число (для конвертации)")
 let base = prompt("Введите ВТОРОЕ число (новая система счисления)")
-//обрабатываю такие значения как текст (в.т.ч. "") и null (нажатие ESC)
+//проверяю "" и null (ESC), т.к. считаю некорректным их приведение к "0"
 if (isNaN(num) || num === null || num === "" ||
     isNaN(base) || base === null || base === "") {
-    console.log("Некорректный ввод!");
+    console.log("Некорректный ввод!")
 } else {
     console.log(Number(num).toString(base))
 }

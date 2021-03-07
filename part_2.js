@@ -10,7 +10,7 @@ let nums = {
 }
 
 for (x in nums) {
-    nums[x] = prompt(`Введите ${x}-ое значение`)
+    nums[x] = prompt("Введите " + x + "-ое значение")
     //проверяю "" и null (ESC), т.к. считаю некорректным их приведение к "0"
     if (isNaN(nums[x]) || nums[x] === "" || nums[x] === null) {
         console.log("Некорректный ввод!")
